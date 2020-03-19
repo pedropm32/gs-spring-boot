@@ -8,3 +8,12 @@
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure subscription 1(b73830a5-90de-44f7-b4a8-30ad9cf00187)'
+    appType: 'webApp'
+    appName: 'gs-spring-boot'
+    deployToSlotOrASE: true
+    slotName: 'production'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
